@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.13
+  - python=3.12 #error: python 3.13.0 is not installable -> 3.12
   - pyyaml
   - hydra-core=1.3.2
   - pandas=2.3.2
