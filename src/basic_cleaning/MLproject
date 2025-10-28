@@ -1,0 +1,31 @@
+name: basic_cleaning
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      input_artifact:
+        description: Name des Input-Artefakts (vollständig mit Version/Tag)
+        type: str
+      output_artifact:
+        description: Name des Output-Artefakts
+        type: str
+      output_type:
+        description: Typ des Output-Artefakts
+        type: str
+      output_description:
+        description: Beschreibung des Output-Artefakts
+        type: str
+      min_price:
+        description: Minimaler Preis in Dollar
+        type: float
+      max_price:
+        description: Maximaler Preis in Dollar
+        type: float
+    command: >-
+      python run.py --input_artifact {input_artifact} \
+                    --output_artifact {output_artifact} \
+                    --output_type {output_type} \
+                    --output_description {output_description} \
+                    --min_price {min_price} \
+                    --max_price {max_price}

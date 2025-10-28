@@ -1,3 +1,17 @@
+# NYC Airbnb Price Prediction - ML Pipeline
+
+**Author:** Daniel Lawitzke  
+**Course:** Udacity ML Pipeline 
+**Project:** Build an ML Pipeline for Short-Term Rental Prices
+
+## Project Links
+- **W&B Project**: https://wandb.ai/danieludacity-udacity/nyc_airbnb
+- **GitHub Repository**: https://github.com/DanielLawitzke/build-ml-pipeline-for-short-term-rental-prices
+
+## Project Overview
+A reproducible machine learning pipeline for predicting Airbnb rental prices in NYC...
+
+
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
