@@ -1,12 +1,18 @@
+# FIXED for Python 3.12 compatibility:
+# - python: 3.13 → 3.12 (better ML package support)
+# - pytest: 6.2.2 → 8.0.0 (2021 version too old for Python 3.12)
+# - scipy: 1.5.2 → 1.14.1 (2020 version doesn't support Python 3.12)
+# Original Udacity versions caused dependency conflicts
+
 name: data_check
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.13
+  - python=3.12
   - pandas=2.3.2
-  - pytest=6.2.2
-  - scipy=1.5.2
+  - pytest=8.0.0
+  - scipy=1.14.1
   - pip=24.3.1
   - pip:
       - mlflow==3.3.2
