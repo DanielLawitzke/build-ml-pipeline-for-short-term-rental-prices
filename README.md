@@ -3,10 +3,61 @@
 **Author:** Daniel Lawitzke  
 **Course:** Udacity ML Pipeline 
 **Project:** Build an ML Pipeline for Short-Term Rental Prices
+**Date:** 29 October 2025
 
 ## Project Links
 - **W&B Project**: https://wandb.ai/danieludacity-udacity/nyc_airbnb
 - **GitHub Repository**: https://github.com/DanielLawitzke/build-ml-pipeline-for-short-term-rental-prices
+
+## Model Performance
+
+**Production Model:** `worldly-violet-18` (Random Forest)
+
+| Dataset | R² Score | MAE ($) |
+|---------|----------|---------|
+| Validation | 0.565 | 33.80 |
+| **Test** | **0.581** | **33.21** |
+
+**Best Hyperparameters:**
+- `max_features`: 0.33
+- `max_tfidf_features`: 15
+- `n_estimators`: 100
+- `max_depth`: 15
+
+## Quick Start
+```bash
+# Clone repository
+git clone https://github.com/DanielLawitzke/build-ml-pipeline-for-short-term-rental-prices.git
+cd build-ml-pipeline-for-short-term-rental-prices
+
+# Create environment
+conda env create -f environment.yml
+conda activate nyc_airbnb_dev
+
+# Run pipeline
+mlflow run . -P steps=all
+```
+
+## Pipeline Steps
+
+1. **download** - Download raw data
+2. **basic_cleaning** - Remove outliers, clean data
+3. **data_check** - Data quality tests
+4. **data_split** - Train/validation/test split
+5. **train_random_forest** - Model training with hyperparameter tuning
+6. **test_regression_model** - Final testing
+
+## Technical Decisions
+
+### Python 3.12
+This project uses Python 3.12 instead of 3.13 for better compatibility with the ML.
+
+### Local Components
+Some components were adapted locally to ensure Python 3.12 compatibility and resolve dependency conflicts in the original Udacity remote components.
+
+---
+
+# Original Udacity Instructions
 
 ## Project Overview
 A reproducible machine learning pipeline for predicting Airbnb rental prices in NYC...
