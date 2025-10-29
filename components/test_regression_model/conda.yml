@@ -1,12 +1,18 @@
+# FIXED for Python 3.12 compatibility:
+# - python: 3.13 → 3.12 
+# - requests: 2.24.0 → 2.32.3 
+# - scikit-learn: 1.3.2 → 1.6.0 (required for Python 3.12)
+# Original Udacity versions caused dependency conflicts with Python 3.12
+
 name: test_regression_model
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.13
+  - python=3.12
   - pip=24.3.1
-  - requests=2.24.0
-  - scikit-learn=1.3.2
+  - requests=2.32.3
+  - scikit-learn=1.6.0
   - pandas=2.3.2
   - pip:
       - mlflow==3.3.2

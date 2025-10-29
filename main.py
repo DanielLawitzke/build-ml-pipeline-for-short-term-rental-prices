@@ -72,7 +72,7 @@ def go(config: DictConfig):
                 env_manager="conda",
                 parameters={
                     "csv": "clean_sample.csv:latest",
-                    "ref": "clean_sample.csv:reference",
+                    "ref": "clean_sample.csv:reference", #ref tag
                     "kl_threshold": config["data_check"]["kl_threshold"],
                     "min_price": config['etl']['min_price'],
                     "max_price": config['etl']['max_price']
@@ -117,12 +117,16 @@ def go(config: DictConfig):
             )
 
         if "test_regression_model" in active_steps:
-
-            ##################
-            # Implement here #
-            ##################
-
-            pass
+            # Test the production model
+            _ = mlflow.run(
+                os.path.join(hydra.utils.get_original_cwd(), "components", "test_regression_model"),  # LOKAL
+                "main",
+                env_manager="conda",
+                parameters={
+                    "mlflow_model": "random_forest_export:prod", #prod tag
+                    "test_dataset": "test_data.csv:latest"
+                },
+            )
 
 
 if __name__ == "__main__":
